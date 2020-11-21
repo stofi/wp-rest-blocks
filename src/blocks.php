@@ -74,6 +74,7 @@ function has_blocks_get_callback( $object ) {
  * @return array
  */
 function blocks_get_callback( $object ) {
+	if ( !isset($object['content'])) return [];
 	$blocks = parse_blocks( $object['content']['raw'] );
 	$output = [];
 	foreach ( $blocks as $block ) {
